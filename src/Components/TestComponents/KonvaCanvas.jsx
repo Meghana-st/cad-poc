@@ -72,7 +72,7 @@ const KonvaCanvas = () => {
     }
 
     return(
-        <Stage width={250} height={250} style={{ border: '3px solid black' }} 
+        <Stage width={640} height={360} style={{ border: '3px solid black' }} 
         //onMouseMove={getCoordinates}
         onMouseMove={straightLineDraw}
         onMouseDown={startDrawing}
@@ -82,48 +82,57 @@ const KonvaCanvas = () => {
             <Rect 
                 x={10}
                 y={20}
-                width={100}
-                height={40}
+                width={150}
+                height={90}
                 stroke="black"
             />
              <Circle 
-                x={150} 
-                y={35} 
-                radius={30} 
+                x={250} 
+                y={70} 
+                radius={40} 
                 stroke="black"
+                draggable
             />
             <Ellipse
-                x={40}
-                y={100}
-                radiusX={30}
-                radiusY={20}
+                x={80}
+                y={180}
+                radiusX={60}
+                radiusY={40}
                 stroke="black"
             />
             <RegularPolygon 
-                x={150}
+                x={450}
                 y={100}
                 sides={5}
-                radius={30}
+                radius={50}
                 stroke="black"
             />
             <Line 
-                points={[5, 170, 120, 154, 70, 189]} //x1,y1,x2,y2...
+                points={[85, 250, 200, 234, 150, 269]} //x1,y1,x2,y2...
                 stroke="black"
                 lineCap= "round"
                 lineJoin="round"
                 tension={1}
             />
             <Arc 
-                x={150}
-                y={150}
-                innerRadius={40}
+                x={300}
+                y={200}
+                innerRadius={60}
                 angle={60}
                 stroke="black"
             />
             <Text 
                 x={20}
-                y={220}
+                y={300}
                 text={"Cursor coordinates: "+ position.x + "," + position.y}
+                fontSize={20}
+            />
+            <Circle 
+                x={350} 
+                y={70} 
+                radius={0.5} 
+                stroke="black"
+                draggable
             />
             {lines.map((line, i) => (
             <Line
